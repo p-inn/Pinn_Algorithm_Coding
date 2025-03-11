@@ -1,18 +1,21 @@
-function gcd(a, b) {
-    while (b !== 0) {
-        let temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
-
 function solution(numer1, denom1, numer2, denom2) {
+    function gcd(a, b) {
+        return b === 0 ? a : gcd(b, a % b);
+    }
 
-    const numer = numer1 * denom2 + numer2 * denom1;
-    const denom = denom1 * denom2;
+    function lcm(a, b) {
+        return (a * b) / gcd(a, b);
+    }
 
-    const gcdValue = gcd(numer, denom);
+    let commonDenominator = lcm(denom1, denom2);
+    let newNumer1 = (commonDenominator / denom1) * numer1;
+    let newNumer2 = (commonDenominator / denom2) * numer2;
+    
+    let resultNumerator = newNumer1 + newNumer2;
+    let resultDenominator = commonDenominator;
 
-    return [numer / gcdValue, denom / gcdValue];
+    let commonDivisor = gcd(resultNumerator, resultDenominator);
+
+    return [resultNumerator / commonDivisor, resultDenominator / commonDivisor];
 }
+
