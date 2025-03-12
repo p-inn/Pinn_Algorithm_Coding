@@ -1,7 +1,9 @@
 function solution(n) {
-    let result = [];
-    for (let i = 1; i <= n; i += 2) {
-        result.push(i);
+    var answer = [];
+    for(let i = 0; i <= n; i++){
+        if(i % 2 !== 0) {
+            answer.push(i);
+        }
     }
-    return result;
+    return answer;
 }
