@@ -1,9 +1,20 @@
-function solution(array) {
-  const freq = {};
-  array.forEach(num => freq[num] = (freq[num] || 0) + 1);
+function solution(arr) {
+    let freqMap = new Map();
+    let maxFreq = 0;
+    let mode = [];
 
-  const maxFreq = Math.max(...Object.values(freq));
-  const modes = Object.keys(freq).filter(key => freq[key] === maxFreq);
+    for (let num of arr) {
+        let freq = (freqMap.get(num) || 0) + 1;
+        freqMap.set(num, freq);
 
-  return modes.length === 1 ? Number(modes[0]) : -1;
+        if (freq > maxFreq) {
+            maxFreq = freq;
+            mode = [num];
+        } else if (freq === maxFreq) {
+            mode.push(num);
+        }
+    }
+
+    return mode.length === 1 ? mode[0] : -1;
 }
+
