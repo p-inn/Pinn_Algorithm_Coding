@@ -1,9 +1,8 @@
+function gcd(a, b) {
+    return b === 0 ? a : gcd(b, a % b);
+}
+
 function solution(n) {
-    let answer = 1;
-
-    while ((answer * 6) % n !== 0) {
-        answer++;
-    }
-
-    return answer;
+    let lcm = (6 * n) / gcd(6, n);
+    return lcm / 6;
 }
