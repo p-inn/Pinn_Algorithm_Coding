@@ -1,10 +1,9 @@
 function solution(numbers) {
     var answer = 0;
-    let avg = 0;
-    for(let i = 0;i<numbers.length;i++){
-        avg += numbers[i];
+    let sum = 0;
+    for(let i = 0; i < numbers.length; i++){
+        sum += numbers[i];
     }
-    answer = avg/numbers.length;
-    
+    answer = sum / numbers.length;
     return answer;
 }
