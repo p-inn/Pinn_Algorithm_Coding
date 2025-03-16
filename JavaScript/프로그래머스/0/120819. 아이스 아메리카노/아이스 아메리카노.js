@@ -1,10 +1,7 @@
 function solution(money) {
     var answer = [];
-    var americano = 0;
-    var other = 0;
-    var cost = 5500;
-    americano = money/cost;
-    other = money-(Math.trunc(cost)*Math.trunc(americano));
-    answer = [Math.trunc(americano),other];
+    let americano = 5500;
+    answer[0] = Math.trunc(money / americano);
+    answer[1] = money - answer[0] * americano;
     return answer;
 }
