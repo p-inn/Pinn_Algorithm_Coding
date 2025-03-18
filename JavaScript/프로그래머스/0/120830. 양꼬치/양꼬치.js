@@ -1,11 +1,5 @@
-
 function solution(n, k) {
     var answer = 0;
-
-    var lamb = n * 12000
-    var beverage = k * 2000
-    var service = Math.floor(n/10) * 2000
-    answer = lamb + beverage - service
-
-    return answer;
+    let discount = Math.floor(n / 10);
+    return 12000 * n + 2000 * (k - discount);
 }
