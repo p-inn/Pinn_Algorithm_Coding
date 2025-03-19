@@ -1,5 +1,4 @@
 function solution(age) {
-    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    
-    return age.toString().split('').map(digit => alphabet[digit.charCodeAt(0) - '0'.charCodeAt(0)]).join('');
+    const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
+    return age.toString().split("").map((num) => alphabet[num]).join("");
 }
