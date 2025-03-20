@@ -1,15 +1,10 @@
 function solution(hp) {
-    const generalAntPower = 5;
-    const soldierAntPower = 3;
-    const workerAntPower = 1;
-
-    let generals = Math.floor(hp / generalAntPower);
-    hp %= generalAntPower;
-
-    let soldiers = Math.floor(hp / soldierAntPower);
-    hp %= soldierAntPower;
-
-    let workers = hp;
-
-    return generals + soldiers + workers;
+    let ant1 = 0;
+    let ant2 = 0;
+    let ant3 = 0;
+    ant1 = Math.floor(hp / 5);
+    ant2 =  Math.floor((hp % 5) / 3);
+    ant3 =  Math.floor(Math.floor((hp % 5) % 3) / 1);
+    
+    return ant1 + ant2 + ant3;
 }
