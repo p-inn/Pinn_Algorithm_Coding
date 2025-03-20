@@ -1,12 +1,8 @@
-function solution(balls, share) {
-    if (share === 0 || balls === share) return 1;
-    
+function solution(n, m) {
     let result = 1;
-    for (let i = 0; i < share; i++) {
-        result *= (balls - i);
+    for (let i = 0; i < m; i++) {
+        result *= (n - i);
         result /= (i + 1);
     }
-    
-    return Math.round(result);
+    return result;
 }
-
