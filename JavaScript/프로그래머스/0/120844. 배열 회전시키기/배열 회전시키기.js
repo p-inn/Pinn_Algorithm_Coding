@@ -1,10 +1,7 @@
 function solution(numbers, direction) {
-    if (direction === 'right') {
-        const lastElement = numbers.pop();
-        numbers.unshift(lastElement);
-    } else if (direction === 'left') {
-        const firstElement = numbers.shift();
-        numbers.push(firstElement);
-    }
-    return numbers;
+    directionType = 0;
+    if(direction == 'right') directionType = -1;
+    if(direction == 'left') directionType = 1;
+    directionType = directionType % numbers.length;
+    return numbers.slice(directionType).concat(numbers.slice(0, directionType));
 }
