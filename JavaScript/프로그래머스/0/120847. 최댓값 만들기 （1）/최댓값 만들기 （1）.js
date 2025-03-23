@@ -1,5 +1,5 @@
 function solution(numbers) {
-    let numbersSort = numbers.sort((a, b) => b - a);
+    numbers.sort((a, b) => b - a);
     
-    return numbersSort[0] * numbersSort[1];
+    return numbers[0] * numbers[1];
 }
