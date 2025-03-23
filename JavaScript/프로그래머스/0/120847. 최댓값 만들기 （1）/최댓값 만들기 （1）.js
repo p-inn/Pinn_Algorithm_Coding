@@ -1,7 +1,5 @@
 function solution(numbers) {
-    numbers.sort((a, b) => a - b);
+    let numbersSort = numbers.sort((a, b) => b - a);
     
-    const maxProduct = numbers[numbers.length - 1] * numbers[numbers.length - 2];
-    
-    return maxProduct;
+    return numbersSort[0] * numbersSort[1];
 }
