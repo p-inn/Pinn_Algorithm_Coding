@@ -1,19 +1,13 @@
 function solution(s) {
-
-    const arr = s.split(' ');
-
-    let sum = 0;
-
-    let lastValue = 0;
-
-    arr.forEach(item => {
-        if (item === "Z") {
-            sum -= lastValue;
+    var answer = 0;
+    let splitS = s.split(' ');
+    for(let i = 0; i < splitS.length; i++){
+        if(splitS[i] == "Z"){
+            answer -= parseInt(splitS[i - 1]); 
         } else {
-            lastValue = parseInt(item);
-            sum += lastValue;
+            answer += parseInt(splitS[i]); 
         }
-    });
-    
-    return sum;
+                                            
+    }
+    return answer;
 }
