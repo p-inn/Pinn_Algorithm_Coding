@@ -1,15 +1,9 @@
 function solution(numbers) {
-    return parseInt(
-        numbers
-            .replace(/zero/g, "0")
-            .replace(/one/g, "1")
-            .replace(/two/g, "2")
-            .replace(/three/g, "3")
-            .replace(/four/g, "4")
-            .replace(/five/g, "5")
-            .replace(/six/g, "6")
-            .replace(/seven/g, "7")
-            .replace(/eight/g, "8")
-            .replace(/nine/g, "9")
-    );
+  const wordList = ["zero","one","two","three","four","five","six","seven","eight","nine"];
+
+  wordList.forEach((word, i) => {
+    numbers = numbers.split(word).join(i);
+  });
+
+  return Number(numbers);
 }
