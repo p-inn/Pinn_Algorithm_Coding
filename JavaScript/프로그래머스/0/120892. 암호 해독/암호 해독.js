@@ -1,9 +1,10 @@
 function solution(cipher, code) {
-    let result = '';
-
-    for (let i = code - 1; i < cipher.length; i += code) {
-        result += cipher[i];
+    var answer = [];
+    cipher = cipher.split('');
+    for(let i = 0; i < cipher.length; i++){
+        if((i + 1) % code === 0) {
+            answer.push(cipher[i]);
+        }
     }
-
-    return result;
+    return answer.join('');
 }
