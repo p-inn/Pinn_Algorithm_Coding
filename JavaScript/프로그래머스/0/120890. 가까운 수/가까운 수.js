@@ -1,13 +1,13 @@
 function solution(array, n) {
-    return array.reduce((prev, curr) => {
+array.sort((a, b) => {
+  const distA = Math.abs(a - n);
+  const distB = Math.abs(b - n);
 
-        const diffPrev = Math.abs(prev - n);
-        const diffCurr = Math.abs(curr - n);
-        
+  if (distA === distB) return a - b;
 
-        if (diffCurr < diffPrev || (diffCurr === diffPrev && curr < prev)) {
-            return curr;
-        }
-        return prev;
-    });
+  return distA - distB;
+});
+
+return array[0];
+
 }
