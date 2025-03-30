@@ -1,10 +1,6 @@
 function solution(num, k) {
-    const numStr = num.toString();
-    const index = numStr.indexOf(k.toString());
-
-    if (index === -1) {
-        return -1; 
-    } else {
-        return index + 1;
-    }
+    var answer = 0;
+    num = num.toString().split('');
+    answer = num.indexOf(k.toString());
+    return answer === -1 ? -1 : answer + 1;
 }
