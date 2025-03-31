@@ -1,3 +1,8 @@
 function solution(n) {
-    return n.toString().split('').reduce((acc, num) => acc + Number(num), 0);
+    var answer = 0;
+    n = n.toString().split('');
+    for(let i = 0; i < n.length; i++){
+        answer += Number(n[i]);
+    }
+    return answer;
 }
