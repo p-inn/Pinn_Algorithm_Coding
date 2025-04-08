@@ -1,8 +1,3 @@
 function solution(my_string) {
-    
-    const lowerCaseString = my_string.toLowerCase();
-
-    const answer = lowerCaseString.split('').sort().join('');
-    
-    return answer;
+    return my_string.toLowerCase().split('').sort().join('');
 }
