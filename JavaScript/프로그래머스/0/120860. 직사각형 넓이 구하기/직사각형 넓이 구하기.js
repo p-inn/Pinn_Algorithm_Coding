@@ -1,5 +1,7 @@
 function solution(dots) {
-    const width = Math.abs(dots[0][0] - dots[1][0]) || Math.abs(dots[0][0] - dots[2][0]);
-    const height = Math.abs(dots[0][1] - dots[1][1]) || Math.abs(dots[0][1] - dots[2][1]);
+    const x = dots.map(dot => dot[0]);
+    const y = dots.map(dot => dot[1]);
+    const width = Math.max(...x) - Math.min(...x);
+    const height = Math.max(...y) - Math.min(...y);
     return width * height;
 }
