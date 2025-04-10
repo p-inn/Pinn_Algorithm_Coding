@@ -1,16 +1,19 @@
 function solution(polynomial) {
-  let [xSum, constantSum] = [0, 0];
+  const terms = polynomial.split(" ");
+  let xSum = 0;
+  let numSum = 0;
 
-  polynomial.split(" ").forEach(term => {
+  terms.forEach(term => {
     if (term.includes("x")) {
-      xSum += term === "x" ? 1 : parseInt(term.replace("x", ""));
+      const num = term === "x" ? 1 : parseInt(term.replace("x", ""));
+      xSum += num;
     } else if (term !== "+") {
-      constantSum += parseInt(term);
+      numSum += parseInt(term);
     }
   });
 
-  const xPart = xSum ? (xSum === 1 ? "x" : `${xSum}x`) : "";
-  const constantPart = constantSum ? `${constantSum}` : "";
-
-  return [xPart, constantPart].filter(Boolean).join(" + ");
+  const result = [];
+  if (xSum) result.push(xSum === 1 ? "x" : `${xSum}x`);
+  if (numSum) result.push(numSum);
+  return result.join(" + ");
 }
