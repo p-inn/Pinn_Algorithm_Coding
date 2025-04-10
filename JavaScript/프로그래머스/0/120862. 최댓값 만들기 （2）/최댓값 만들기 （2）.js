@@ -1,6 +1,6 @@
 function solution(numbers) {
-    numbers.sort((a, b) => a - b);
-
-    const n = numbers.length;
-    return Math.max(numbers[0] * numbers[1], numbers[n - 1] * numbers[n - 2]);
+  const asc = [...numbers].sort((a, b) => a - b);
+  const candidate1 = asc[0] * asc[1];
+  const candidate2 = asc[asc.length - 1] * asc[asc.length - 2];
+  return Math.max(candidate1, candidate2);
 }
