@@ -1,10 +1,4 @@
 function solution(my_string) {
-
-    const numbers = my_string.match(/\d+/g);
-
-    if (!numbers) return 0;
-
-    const sum = numbers.map(Number).reduce((acc, curr) => acc + curr, 0);
-    
-    return sum;
+    const numbers = my_string.match(/[0-9]+/g);
+    return numbers ? numbers.reduce((acc, cur) => acc + Number(cur), 0) : 0;
 }
