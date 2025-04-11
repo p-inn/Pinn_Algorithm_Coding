@@ -1,28 +1,13 @@
 function solution(keyinput, board) {
-
     let x = 0;
     let y = 0;
-
-    const maxX = Math.floor(board[0] / 2);
-    const maxY = Math.floor(board[1] / 2);
-    
-
-    keyinput.forEach(input => {
-        switch (input) {
-            case 'up':
-                if (y < maxY) y += 1;
-                break;
-            case 'down':
-                if (y > -maxY) y -= 1;
-                break;
-            case 'left':
-                if (x > -maxX) x -= 1;
-                break;
-            case 'right':
-                if (x < maxX) x += 1;
-                break;
-        }
-    });
-
+    const xLimit = Math.floor(board[0] / 2);
+    const yLimit = Math.floor(board[1] / 2);
+    for (let key of keyinput) {
+      if (key === "up" && y < yLimit) y++;
+      if (key === "down" && y > -yLimit) y--;
+      if (key === "left" && x > -xLimit) x--;
+      if (key === "right" && x < xLimit) x++;
+    }
     return [x, y];
 }
