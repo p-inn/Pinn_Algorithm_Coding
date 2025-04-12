@@ -1,10 +1,8 @@
 function solution(spell, dic) {
-    const sortedSpell = spell.sort().join('');
-
-    for (const word of dic) {
-        if (sortedSpell === word.split('').sort().join('')) {
-            return 1;
-        }
-    }
-    return 2;
+  return dic.some(word => {
+    return (
+      spell.every(char => word.includes(char)) &&
+      word.length === spell.length
+    );
+  }) ? 1 : 2;
 }
