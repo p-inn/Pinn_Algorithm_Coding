@@ -1,15 +1,9 @@
 function solution(id_pw, db) {
-    const [inputId, inputPw] = id_pw;
+  const [inputId, inputPw] = id_pw;
 
-    for (const [id, pw] of db) {
-        if (id === inputId) {
-            if (pw === inputPw) {
-                return "login";
-            } else {
-                return "wrong pw";
-            }
-        }
-    }
+  const user = db.find(([dbId, dbPw]) => dbId === inputId);
 
-    return "fail";
+  if (!user) return "fail";
+  if (user[1] !== inputPw) return "wrong pw";
+  return "login";
 }
