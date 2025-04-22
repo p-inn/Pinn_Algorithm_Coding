@@ -1,13 +1,13 @@
 function solution(n) {
-    let count = 0;
-    let currentNumber = 0;
+  let count = 0;
+  let num = 0;
 
-    while (count < n) {
-        currentNumber++;
-        if (currentNumber % 3 !== 0 && !currentNumber.toString().includes('3')) {
-            count++;
-        }
+  while (count < n) {
+    num++;
+    if (num % 3 !== 0 && !num.toString().includes('3')) {
+      count++;
     }
+  }
 
-    return currentNumber;
+  return num;
 }
