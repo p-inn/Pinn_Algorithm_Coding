@@ -1,7 +1,4 @@
 function solution(before, after) {
+    return before.split('').sort().join('') === after.split('').sort().join('')? 1 : 0;
 
-    const sortedBefore = before.split('').sort().join('');
-    const sortedAfter = after.split('').sort().join('');
-
-    return sortedBefore === sortedAfter ? 1 : 0;
 }
