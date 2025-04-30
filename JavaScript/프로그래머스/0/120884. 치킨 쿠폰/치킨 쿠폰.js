@@ -1,12 +1,11 @@
 function solution(chicken) {
-    let totalChick = 0;
-    let coupons = chicken;
+let coupon = chicken;
+let service = 0;
 
-    while (coupons >= 10) {
-        let newChickens = Math.floor(coupons / 10);
-        totalChick += newChickens;
-        coupons = newChickens + (coupons % 10);
-    }
-
-    return totalChick;
+while (coupon >= 10) {
+  let newChickens = Math.floor(coupon / 10);
+  service += newChickens;
+  coupon = newChickens + (coupon % 10);
+}
+    return service;
 }
