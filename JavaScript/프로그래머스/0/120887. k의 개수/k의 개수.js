@@ -1,15 +1,7 @@
 function solution(i, j, k) {
-    let count = 0;
-    const kStr = k.toString();
-
-    for (let num = i; num <= j; num++) {
-        const numStr = num.toString(); 
-        for (let char of numStr) {
-            if (char === kStr) {
-                count++;
-            }
-        }
-    }
-
-    return count;
+  let count = 0;
+  for (let n = i; n <= j; n++) {
+    count += n.toString().split(k.toString()).length - 1;
+  }
+  return count;
 }
