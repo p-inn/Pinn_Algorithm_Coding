@@ -1,6 +1,5 @@
 function solution(num, total) {
+  const start = (total - (num * (num - 1)) / 2) / num;
 
-    const x = (total - (num * (num - 1)) / 2) / num;
-
-    return Array.from({ length: num }, (_, i) => x + i);
+  return Array.from({ length: num }, (_, i) => start + i);
 }
