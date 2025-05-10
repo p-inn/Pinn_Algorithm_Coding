@@ -6,12 +6,8 @@ const rl = readline.createInterface({
 
 let input = [];
 
-
 rl.on('line', function (line) {
     input = line.split(' ');
 }).on('close', function () {
-    const a = Number(input[0]);
-    const b = Number(input[1]);
-    const sum = a + b;
-    console.log(`${a} + ${b} = ${sum}`);
+    console.log(`${Number(input[0])} + ${Number(input[1])} = ${Number(input[0])+Number(input[1])}`);
 });
