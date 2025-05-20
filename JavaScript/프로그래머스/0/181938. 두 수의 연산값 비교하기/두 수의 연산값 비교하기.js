@@ -1,8 +1,9 @@
 function solution(a, b) {
-
-    const concat = Number(String(a) + String(b));
-
-    const product = 2 * a * b;
-
-    return concat >= product ? concat : product;
+    let sumA = a.toString() + b.toString()
+    let sumB = 2 * a * b;
+    if(sumA > sumB){
+         return Number(sumA);
+    }else if(sumB > sumA){
+         return sumB;
+    }else return Number(sumA);
 }
