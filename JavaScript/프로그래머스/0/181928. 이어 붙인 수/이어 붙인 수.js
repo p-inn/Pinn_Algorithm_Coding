@@ -1,8 +1,5 @@
 function solution(num_list) {
-
-    const oddStr = num_list.filter(num => num % 2 !== 0).join('');
-
-    const evenStr = num_list.filter(num => num % 2 === 0).join('');
-    
-    return Number(oddStr) + Number(evenStr);
+    const sumA = num_list.filter(n => n % 2 === 1).join("");
+    const sumB = num_list.filter(n => n % 2 === 0).join("");
+    return Number(sumA) +Number(sumB);
 }
