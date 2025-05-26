@@ -1,13 +1,10 @@
 function solution(a, b, c) {
-    const sum = a + b + c;
-    const sumOfSquares = a * a + b * b + c * c;
-    const sumOfCubes = a * a * a + b * b * b + c * c * c;
-    
-    if (a === b && b === c) {
-        return sum * sumOfSquares * sumOfCubes;
-    } else if (a === b || b === c || a === c) {
-        return sum * sumOfSquares;
-    } else {
-        return sum;
-    }
+  const sum1 = a + b + c;
+  const sum2 = a**2 + b**2 + c**2;
+  const sum3 = a**3 + b**3 + c**3;
+
+  if (a === b && b === c) return sum1 * sum2 * sum3;
+  if (a === b || a === c || b === c) return sum1 * sum2;
+  return sum1;
 }
+
