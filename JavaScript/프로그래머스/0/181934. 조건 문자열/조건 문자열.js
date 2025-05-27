@@ -1,12 +1,10 @@
 function solution(ineq, eq, n, m) {
-  if (ineq === ">" && eq === "=") {
-    return n >= m ? 1 : 0;
-  } else if (ineq === "<" && eq === "=") {
-    return n <= m ? 1 : 0;
-  } else if (ineq === ">" && eq === "!") {
-    return n > m ? 1 : 0;
-  } else if (ineq === "<" && eq === "!") {
-    return n < m ? 1 : 0;
-  }
-  return 0; 
+  const operators = {
+    '>=': (a, b) => a >= b,
+    '<=': (a, b) => a <= b,
+    '>!': (a, b) => a > b,
+    '<!': (a, b) => a < b
+  };
+
+  return operators[ineq + eq](n, m) ? 1 : 0;
 }
