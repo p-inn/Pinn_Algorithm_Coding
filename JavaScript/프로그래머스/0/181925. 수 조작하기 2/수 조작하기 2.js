@@ -1,19 +1,17 @@
 function solution(numLog) {
-    let result = '';
+  const commandMap = {
+    "1": "w",
+    "-1": "s",
+    "10": "d",
+    "-10": "a"
+  };
 
-    for (let i = 1; i < numLog.length; i++) {
-        let diff = numLog[i] - numLog[i - 1];
+  let result = "";
 
-        if (diff === 1) {
-            result += 'w';
-        } else if (diff === -1) {
-            result += 's';
-        } else if (diff === 10) {
-            result += 'd';
-        } else if (diff === -10) {
-            result += 'a';
-        }
-    }
+  for (let i = 0; i < numLog.length - 1; i++) {
+    const diff = numLog[i + 1] - numLog[i];
+    result += commandMap[diff];
+  }
 
-    return result;
+  return result;
 }
