@@ -1,11 +1,12 @@
 function solution(a, d, included) {
-  let sum = 0;
+    let sum = 0;
 
-  included.forEach((include, index) => {
-    if (include) {
-      sum += a + d * index;
+    for (let i = 0; i < included.length; i++) {
+        const term = a + d * i;
+        if (included[i]) {
+            sum += term;
+        }
     }
-  });
 
-  return sum;
+    return sum;
 }
