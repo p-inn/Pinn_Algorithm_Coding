@@ -1,7 +1,3 @@
 function solution(number) {
-    let sum = 0;
-    for (let digit of number) {
-        sum += parseInt(digit, 10);
-    }
-    return sum % 9;
+    return [...number].reduce((sum, digit) => (sum + Number(digit)) % 9, 0);
 }
