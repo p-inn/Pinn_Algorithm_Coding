@@ -1,7 +1,8 @@
 function solution(myString, pat) {
-
-    let convertedString = [...myString].map(char => char === 'A' ? 'B' : 'A').join('');
-    
-
-    return convertedString.includes(pat) ? 1 : 0;
+    var answer = [];
+    myString = myString.split('');
+    for(let i = 0; i < myString.length; i++){
+       answer.push(myString[i] === "A" ? "B" : "A");
+    }
+    return answer.join('').includes(pat) ? 1 : 0;
 }
