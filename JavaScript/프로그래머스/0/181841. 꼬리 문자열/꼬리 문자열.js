@@ -1,4 +1,4 @@
 function solution(str_list, ex) {
-
-    return str_list.filter(str => !str.includes(ex)).join('');
+    var answer = '';
+    return str_list.map(c => !c.includes(ex) ? answer + c : answer).join('');
 }
