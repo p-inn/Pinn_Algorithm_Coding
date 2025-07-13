@@ -1,3 +1,3 @@
 function solution(strArr) {
-    return strArr.filter(str => !str.includes("ad"));
+  return strArr.filter(c => !c.includes('ad'));
 }
