@@ -1,13 +1,8 @@
 function solution(binomial) {
-    let [a, op, b] = binomial.split(" ");
-    a = parseInt(a);
-    b = parseInt(b);
-    
-    if (op === '+') {
-        return a + b;
-    } else if (op === '-') {
-        return a - b;
-    } else if (op === '*') {
-        return a * b;
-    }
+    let newBinomial = binomial.split(' ');
+    if(newBinomial[1] =="+"){
+        return Number(newBinomial[0]) + Number(newBinomial[2]);
+    }else if(newBinomial[1] =="-"){
+        return Number(newBinomial[0]) - Number(newBinomial[2]);
+    }else return Number(newBinomial[0]) * Number(newBinomial[2]);
 }
