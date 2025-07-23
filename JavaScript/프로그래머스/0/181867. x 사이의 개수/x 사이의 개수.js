@@ -1,3 +1,4 @@
 function solution(myString) {
-    return myString.split("x").map(str => str.length);
+    let newmyString = myString.split('x');
+    return newmyString.map((c) => c.length);
 }
