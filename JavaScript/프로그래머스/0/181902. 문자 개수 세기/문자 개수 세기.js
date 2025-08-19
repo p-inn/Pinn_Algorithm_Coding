@@ -1,15 +1,8 @@
 function solution(my_string) {
-    let counts = new Array(52).fill(0);
-    
-    for (let char of my_string) {
-        let index;
-        if (char >= 'A' && char <= 'Z') {
-            index = char.charCodeAt(0) - 'A'.charCodeAt(0);
-        } else if (char >= 'a' && char <= 'z') {
-            index = char.charCodeAt(0) - 'a'.charCodeAt(0) + 26;
-        }
-        counts[index]++;
-    }
-    
-    return counts;
+  return my_string.split('').reduce((acc, ch) => {
+    let code = ch.charCodeAt(0);
+    let idx = code >= 97 ? code - 97 + 26 : code - 65;
+    acc[idx]++;
+    return acc;
+  }, Array(52).fill(0));
 }
