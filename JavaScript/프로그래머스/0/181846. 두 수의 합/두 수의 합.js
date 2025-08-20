@@ -1,4 +1,4 @@
-const solution = (a, b) => String(BigInt(a) + BigInt(b))
-
-
-
+function solution(a, b) {
+    var answer = BigInt(a) + BigInt(b);
+    return answer.toString();
+}
