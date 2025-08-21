@@ -1,14 +1,6 @@
 function solution(order) {
-  let total = 0;
-
-  order.forEach(item => {
-    if (item.includes("americano") || item === "anything") {
-
-      total += 4500;
-    } else if (item.includes("cafelatte")) {
-      total += 5000;
-    }
-  });
-
-  return total;
+    let americano = order.filter((e) => e.includes("americano")).length;
+    let caffeLatte = order.filter((e) => e.includes("cafelatte")).length;
+    let anything = order.filter((e) => e.includes("anything")).length;    
+    return ((americano + anything) * 4500) + (caffeLatte * 5000);
 }
