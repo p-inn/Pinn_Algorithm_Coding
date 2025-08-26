@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 33.4 MB, 시간: 0.04 ms
+메모리: 33.4 MB, 시간: 0.03 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 12월 12일 17:44:10
+2025년 08월 26일 20:31:49
 
 ### 문제 설명
 
@@ -83,17 +83,39 @@
 <ul>
 <li>∨과 ∧의 진리표는 다음과 같습니다.</li>
 </ul>
-
-<p>|x|y|x ∨ y|x ∧ y|</p>
-
-<p>|---|---|---|---|</p>
-
-<p>|T|T|T|T|</p>
-
-<p>|T|F|T|F|</p>
-
-<p>|F|T|T|F|<br>
-    |F|F|F|F|</p>
-
+<table class="table">
+        <thead><tr>
+<th>x</th>
+<th>y</th>
+<th>x ∨ y</th>
+<th>x ∧ y</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr>
+<td></td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+</tbody>
+      </table>
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
