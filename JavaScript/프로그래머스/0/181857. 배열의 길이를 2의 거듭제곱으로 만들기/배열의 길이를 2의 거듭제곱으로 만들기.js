@@ -1,13 +1,9 @@
 function solution(arr) {
-
-    let length = arr.length;
-    let newLength = 1;
-    
-    while(newLength<length){
-        newLength *= 2;
+  const n = arr.length;
+  let p = 1;
+    while (p < n) {
+        p *= 2;
     }
-    while (arr.length < newLength) {
-        arr.push(0);
-    }
-    return arr;
+  const need = p - n;
+  return arr.concat(Array(need).fill(0));
 }
