@@ -1,8 +1,8 @@
 function solution(arr, queries) {
-    for (const [s, e] of queries) {
-        for (let i = s; i <= e; i++) {
-            arr[i] += 1;
-        }
+  queries.forEach(([s, e]) => {
+    for (let i = s; i <= e; i++) {
+      arr[i] += 1;
     }
-    return arr;
+  });
+  return arr;
 }
