@@ -9,8 +9,7 @@ let input = [];
 rl.on('line', function (line) {
     input = line.split(' ');
 }).on('close', function () {
-    const str = input[0];
-    const n = Number(input[1]);
-
+    str = input[0];
+    n = Number(input[1]);
     console.log(str.repeat(n));
 });
