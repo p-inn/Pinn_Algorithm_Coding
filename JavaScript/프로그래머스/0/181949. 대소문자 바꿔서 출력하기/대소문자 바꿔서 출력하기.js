@@ -4,17 +4,14 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+let input = [];
+
 rl.on('line', function (line) {
-    let result = '';
-
-    for (let char of line) {
-        if (char === char.toUpperCase()) {
-            result += char.toLowerCase();
-        } else {
-            result += char.toUpperCase();
-        }
-    }
-
-    console.log(result);
-    rl.close(); 
+    input = [line];
+}).on('close',function(){
+    str = input[0];
+    console.log(str
+  .split('')
+  .map(ch => ch === ch.toUpperCase() ? ch.toLowerCase() : ch.toUpperCase())
+  .join(''))
 });
