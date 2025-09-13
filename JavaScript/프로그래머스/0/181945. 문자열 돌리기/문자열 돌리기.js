@@ -1,12 +1,16 @@
-let input = "";
-
-process.stdin.on("data", function (chunk) {
-  input += chunk;
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
 });
 
-process.stdin.on("end", function () {
-  input = input.trim();
-  for (let i = 0; i < input.length; i++) {
-    console.log(input[i]);
-  }
+let input = [];
+
+rl.on('line', function (line) {
+    input = [line];
+}).on('close',function(){
+    str = input[0];
+    str.split('').forEach(char => {
+  console.log(char);
+});
 });
