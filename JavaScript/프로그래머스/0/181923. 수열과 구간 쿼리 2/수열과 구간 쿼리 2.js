@@ -1,13 +1,16 @@
 function solution(arr, queries) {
-  return queries.map(([s, e, k]) => {
+  const answer = [];
+
+  for (const [s, e, k] of queries) {
     let best = Infinity;
 
     for (let i = s; i <= e; i++) {
-      if (arr[i] > k && arr[i] < best) {
-        best = arr[i];
-      }
+      const x = arr[i];
+      if (x > k && x < best) best = x;
     }
 
-    return best === Infinity ? -1 : best;
-  });
+    answer.push(best === Infinity ? -1 : best);
+  }
+
+  return answer;
 }
